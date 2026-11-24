@@ -1,0 +1,6 @@
+{
+  "name": "Polinom.io security scans",
+  "description": "gitleaks over the full history and OSV-Scanner on lockfiles, from the shared reusable workflow.",
+  "iconName": "octicon shield-check",
+  "categories": ["Security"]
+}
