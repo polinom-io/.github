@@ -17,4 +17,4 @@ jobs:
   security:
     permissions:
       contents: read
-    uses: polinom-io/px-workflows-public/.github/workflows/security.yml@7680138fa0eb60ff284e1c7291347a047c9eb08c # v0.2.0
+    uses: polinom-io/px-workflows-public/.github/workflows/security.yml@966ffd6eec9df7dbaefb5afe2e9f6be1656eeaf6 # v0.3.0
