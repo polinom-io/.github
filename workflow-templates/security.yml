@@ -1,0 +1,20 @@
+# Security scans from the shared reusable workflow: gitleaks over the full git history
+# (job `secrets`) and OSV-Scanner on lockfiles (job `dependencies`, fails at CVSS >= 7).
+# Make "security / secrets" and "security / dependencies" required checks.
+name: security
+
+on:
+  pull_request:
+  push:
+    branches: [$default-branch]
+  schedule:
+    - cron: "0 6 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  security:
+    permissions:
+      contents: read
+    uses: polinom-io/px-workflows-public/.github/workflows/security.yml@7680138fa0eb60ff284e1c7291347a047c9eb08c # v0.2.0
