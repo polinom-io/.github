@@ -1,0 +1,20 @@
+# Secret scan of the full git history (gitleaks) and known-vulnerability scan of
+# lockfiles (OSV-Scanner, fails at CVSS >= 7). Jobs `secrets` and `dependencies`
+# can be made required checks.
+name: security
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "0 6 * * 1"   # Mondays 06:00 UTC: catches new CVEs in unchanged code
+
+permissions:
+  contents: read
+
+jobs:
+  security:
+    permissions:
+      contents: read
+    uses: polinom-io/px-workflows-public/.github/workflows/security.yml@eddfd496c8521463acda9201bcfd1563c917d2b7 # v0.6.0
